@@ -3,7 +3,7 @@ import Logo from "../assets/images/logo.png";
 import Menu from "../assets/images/menu.png";
 import Close from "../assets/images/close.png";
 
-function Header() {
+function Header({ setShowModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -62,11 +62,15 @@ function Header() {
         <div className="hidden lg:flex  items-center space-x-3">
           <a
             href="#"
+            onClick={setShowModal}
             className="text-grayUi700 hover:text-grayUi800  pr-4 border-r-2 border-grayUi400"
           >
             Sign up
           </a>
-          <button className="px-4 py-2 bg-grayUi900 hover:bg-grayUi400 transition-all delay-75 text-white rounded-full">
+          <button
+            onClick={setShowModal}
+            className="px-4 py-2 bg-grayUi900 hover:bg-grayUi400 transition-all delay-75 text-white rounded-full"
+          >
             Connect Wallet
           </button>
         </div>
@@ -97,12 +101,18 @@ function Header() {
               <div className="flex  items-center space-x-3 ml-6 mt-24">
                 <a
                   href="#"
-                  onClick={closeMenu}
+                  onClick={() => {
+                    setShowModal(true);
+                    closeMenu();
+                  }}
                   className="text-grayUi700 hover:text-grayUi800  pr-4 border-r-2 border-grayUi400"
                 >
                   Sign up
                 </a>
-                <button className="px-4 py-2 bg-grayUi900 transition-all delay-75 hover:bg-grayUi400 text-white rounded-full">
+                <button
+                  onClick={setShowModal}
+                  className="px-4 py-2 bg-grayUi900 transition-all delay-75 hover:bg-grayUi400 text-white rounded-full"
+                >
                   Connect Wallet
                 </button>
               </div>

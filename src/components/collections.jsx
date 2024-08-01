@@ -5,6 +5,7 @@ import Espace from "../assets/images/original-space.png";
 import Psx from "../assets/images/psx.png";
 import Snop from "../assets/images/snop.png";
 import { motion, AnimatePresence } from "framer-motion";
+import Modal from "./commons/modal";
 
 const tabs = [
   { name: "All categories", filter: "all" },
@@ -39,11 +40,13 @@ const items = [
 
 function Collection() {
   const [selectedTab, setSelectedTab] = useState("all");
+  const [selectedImg, setSelectedImg] = useState(null);
 
   const filteredItems =
     selectedTab === "all"
       ? items
       : items.filter((item) => item.tag === selectedTab);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -120,7 +123,8 @@ function Collection() {
               <img
                 src={item.imgSrc}
                 alt={item.title}
-                className="mb-4 w-full object-cover rounded-xl h-48 group-hover:scale-110 transition-all duration-300 group-hover:opacity-50"
+                onClick={() => setSelectedImg(item.imgSrc)}
+                className="mb-4 w-full object-cover rounded-xl cursor-pointer h-48 group-hover:scale-110 transition-all duration-300 group-hover:opacity-50"
               />
               <div className="flex justify-between items-center">
                 <h2 className="text-t14 font-semibold">{item.title}</h2>
@@ -128,12 +132,18 @@ function Collection() {
                   <img src={Etherium} className="w-4 h-4" alt="" /> 98
                 </span>
               </div>
-              <button className="mt-4 block px-4 py-1 w-full bg-white border hover:bg-grayUi500 hover:text-white border-black rounded-xl">
+              <button
+                onClick={() => setSelectedImg(item.imgSrc)}
+                className="mt-4 block px-4 py-1 w-full bg-white border hover:bg-grayUi500 hover:text-white border-black rounded-xl"
+              >
                 Place a Bid
               </button>
             </motion.div>
           ))}
         </AnimatePresence>
+        {selectedImg && (
+          <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
       </div>
     </div>
   );

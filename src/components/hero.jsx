@@ -4,7 +4,7 @@ import Top10 from "../assets/images/top10.png";
 import Machine from "../assets/images/machine.png";
 import Deco from "../assets/images/deco.png";
 
-function Hero() {
+function Hero({ setShowModal }) {
   return (
     <div className="max-w-screen-lg overflow-hidden  ml-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 min-h-screen">
       <div className="my-20 flex gap-y-20 md:gap-y-8 lg:gap-y-0 flex-col lg:flex-row lg:justify-between relative">
@@ -18,7 +18,10 @@ function Hero() {
           </p>
           <div className="flex items-center gap-x-2">
             <span className="text-grayUi700">Discover Now</span>
-            <button className="bg-transparent border  hover:animate-bounce hover-border-grayUi400 border-grayUi700 text-white p-2.5 rounded-full inline-flex items-center">
+            <button
+              onClick={setShowModal}
+              className="bg-transparent border  hover:animate-bounce  transition-all duration-100 hover-border-grayUi400 border-grayUi700 text-white p-2.5 rounded-full inline-flex items-center"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
