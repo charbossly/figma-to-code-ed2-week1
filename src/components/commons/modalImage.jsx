@@ -25,7 +25,7 @@ function Modal({ selectedImg, setSelectedImg }) {
 
   return (
     <motion.div
-      className="backdrop fixed top-0 left-0 w-full z-50 h-full bg-black bg-opacity-75 flex justify-center items-center"
+      className="backdrop fixed font-raleway top-0 left-0 w-full z-50 h-full bg-black bg-opacity-75 flex justify-center items-center"
       variants={backdropVariants}
       initial="hidden"
       animate="visible"

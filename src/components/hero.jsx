@@ -4,7 +4,7 @@ import Deco from "../assets/images/deco.png";
 
 function Hero({ setShowModal }) {
   return (
-    <div className="max-w-screen-lg overflow-hidden  ml-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 min-h-screen">
+    <div className="max-w-screen-lg font-raleway overflow-hidden  ml-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 min-h-screen">
       <div className="my-20 flex gap-y-20 md:gap-y-8 lg:gap-y-0 flex-col lg:flex-row lg:justify-between relative">
         <div className="w-full lg:w-2/3 space-y-10">
           <h1 className="text-t48 md:text-t80 lg:text-t96 font-raleway  font-normal leading-[5rem] md:leading-[6rem] md:tracking-widest lg:tracking-wider md:w-[90%] lg:w-full text-grayUi700 mb-4">

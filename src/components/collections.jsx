@@ -56,7 +56,7 @@ function Collection() {
   return (
     <div
       id="collections"
-      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12"
+      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 font-raleway"
     >
       <h1 className="text-t28 font-bold mb-8 text-left">Our Collections</h1>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12">

@@ -32,7 +32,7 @@ function Header({ setShowModal }) {
 
   return (
     <div
-      className={`border-b-2 border-grayUi50 ${
+      className={`border-b-2 font-raleway border-grayUi50 ${
         isMenuOpen && "min-h-screen"
       } relative`}
     >

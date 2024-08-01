@@ -22,7 +22,7 @@ export default function footer() {
     },
   ];
   return (
-    <footer className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto border-l-2 border-grayUi50">
+    <footer className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto border-l-2 border-grayUi50 font-raleway">
       <div className=" py-3 border-grayUi50 border-b-2 pb-4">
         <img src={Logo} alt="logo" className="h-8 cursor-pointer" />
       </div>

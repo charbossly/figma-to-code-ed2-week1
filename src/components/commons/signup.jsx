@@ -11,7 +11,7 @@ function SignupForm({ setShowModal }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 relative">
+    <form onSubmit={handleSubmit} className="space-y-4 relative font-raleway">
       <div
         className="absolute -top-10 -right-4 cursor-pointer border-2 rounded-full  p-2 px-3 text-sm"
         onClick={handleClose}

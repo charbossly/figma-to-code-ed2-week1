@@ -4,7 +4,7 @@ export default function cta({ setShowModal }) {
   return (
     <div
       id="cta"
-      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12"
+      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 font-raleway"
     >
       <div className="group bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
         <div className="relative">

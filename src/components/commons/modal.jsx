@@ -26,7 +26,7 @@ function Modal({ showModal, setShowModal, children }) {
     <AnimatePresence mode="wait">
       {showModal && (
         <motion.div
-          className="backdrop fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center"
+          className="backdrop font-raleway fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center"
           variants={backdropVariants}
           initial="hidden"
           animate="visible"
