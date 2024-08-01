@@ -18,7 +18,7 @@ function Hero() {
           </p>
           <div className="flex items-center gap-x-2">
             <span className="text-grayUi700">Discover Now</span>
-            <button className="bg-transparent border border-grayUi700 text-white p-2.5 rounded-full inline-flex items-center">
+            <button className="bg-transparent border  hover:animate-bounce hover-border-grayUi400 border-grayUi700 text-white p-2.5 rounded-full inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -39,10 +39,10 @@ function Hero() {
             <img
               src={Top10}
               alt="Stylized NFT art piece, abstract human face in purple and red tones"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full hover:scale-110 transition-all duration-300"
             />
           </div>
-          <div className="absolute -bottom-32 sm:-bottom-16 lg:-bottom-24 left-0 sm:left-24 lg:left-auto sm:right-52 w-64 h-96 sm:h-72 md:w-48 lg:h-72  rounded-full overflow-hidden md:mr-4">
+          <div className="absolute hover:scale-110 transition-all duration-300 -bottom-32 sm:-bottom-16 lg:-bottom-24 left-0 sm:left-24 lg:left-auto sm:right-52 w-64 h-96 sm:h-72 md:w-48 lg:h-72  rounded-full overflow-hidden md:mr-4">
             <img
               src={Machine}
               alt="Stylized NFT art piece, abstract human face in purple and red tones"

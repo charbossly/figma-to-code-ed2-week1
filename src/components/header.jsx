@@ -66,7 +66,7 @@ function Header() {
           >
             Sign up
           </a>
-          <button className="px-4 py-2 bg-grayUi900 text-white rounded-full">
+          <button className="px-4 py-2 bg-grayUi900 hover:bg-grayUi400 transition-all delay-75 text-white rounded-full">
             Connect Wallet
           </button>
         </div>
@@ -102,7 +102,7 @@ function Header() {
                 >
                   Sign up
                 </a>
-                <button className="px-4 py-2 bg-grayUi900 text-white rounded-full">
+                <button className="px-4 py-2 bg-grayUi900 transition-all delay-75 hover:bg-grayUi400 text-white rounded-full">
                   Connect Wallet
                 </button>
               </div>

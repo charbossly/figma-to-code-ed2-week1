@@ -4,6 +4,7 @@ import Virtual from "../assets/images/virtual.png";
 import Espace from "../assets/images/original-space.png";
 import Psx from "../assets/images/psx.png";
 import Snop from "../assets/images/snop.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const tabs = [
   { name: "All categories", filter: "all" },
@@ -43,6 +44,21 @@ function Collection() {
     selectedTab === "all"
       ? items
       : items.filter((item) => item.tag === selectedTab);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.9 },
+  };
 
   return (
     <div
@@ -90,24 +106,34 @@ function Collection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  px-6 md:px-12 lg:px-0">
-        {filteredItems.map((item, index) => (
-          <div key={index} className="border rounded-xl p-2">
-            <img
-              src={item.imgSrc}
-              alt={item.title}
-              className="mb-4 w-full object-cover rounded-xl h-48"
-            />
-            <div className="flex justify-between items-center">
-              <h2 className="text-t14 font-semibold">{item.title}</h2>
-              <span className="text-t12 text-grayUi500 flex items-center space-x-2 font-bold">
-                <img src={Etherium} className="w-4 h-4" alt="" /> 98
-              </span>
-            </div>
-            <button className="mt-4 block px-4 py-1 w-full bg-white border border-black rounded-xl">
-              Place a Bid
-            </button>
-          </div>
-        ))}
+        <AnimatePresence>
+          {filteredItems.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+              className="group border rounded-xl p-2 overflow-hidden"
+            >
+              <img
+                src={item.imgSrc}
+                alt={item.title}
+                className="mb-4 w-full object-cover rounded-xl h-48 group-hover:scale-110 transition-all duration-300 group-hover:opacity-50"
+              />
+              <div className="flex justify-between items-center">
+                <h2 className="text-t14 font-semibold">{item.title}</h2>
+                <span className="text-t12 text-grayUi500 flex items-center space-x-2 font-bold">
+                  <img src={Etherium} className="w-4 h-4" alt="" /> 98
+                </span>
+              </div>
+              <button className="mt-4 block px-4 py-1 w-full bg-white border hover:bg-grayUi500 hover:text-white border-black rounded-xl">
+                Place a Bid
+              </button>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );
