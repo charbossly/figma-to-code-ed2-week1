@@ -43,11 +43,11 @@ function Hero({ setShowModal }) {
               className="object-cover w-full h-full hover:scale-110 transition-all duration-300"
             />
           </div>
-          <div className="absolute hover:scale-110 transition-all duration-300 -bottom-32 sm:-bottom-16 lg:-bottom-24 left-0 sm:left-24 lg:left-auto sm:right-52 w-64 h-96 sm:h-72 md:w-48 lg:h-72  rounded-full overflow-hidden md:mr-4">
+          <div className="absolute  -bottom-32 sm:-bottom-16 lg:-bottom-24 left-0 sm:left-24 lg:left-auto sm:right-52 w-64 h-96 sm:h-72 md:w-48 lg:h-72  rounded-full overflow-hidden md:mr-4">
             <img
               src={Machine}
               alt="Stylized NFT art piece, abstract human face in purple and red tones"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full hover:scale-110 transition-all duration-300"
             />
           </div>
           <div className="absolute top-16 right-10 sm:right-72 lg:right-52 w-28 md:w-24   rounded-full overflow-hidden mr-4">
