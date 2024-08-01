@@ -1,0 +1,45 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: {
+        raleway: ["Raleway", "sans-serif"],
+      },
+      colors: {
+        grayUi50: "#E8E9EA",
+        grayUi100: "#B8BABE",
+        grayUi200: "#96989E",
+        grayUi300: "#666A72",
+        grayUi400: "#484D56",
+        grayUi500: "#1A202C",
+        grayUi600: "#181D28",
+        grayUi700: "#12171F",
+        grayUi800: "#0E1218",
+        grayUi900: "#0B0D12",
+      },
+      fontSize: {
+        t12: "12px",
+        t13: "13px",
+        t14: "14px",
+        t16: "16px",
+        t18: "18px",
+        t20: "20px",
+        t24: "24px",
+        t28: "28px",
+        t32: "32px",
+        t36: "36px",
+        t40: "40px",
+        t48: "48px",
+        t56: "56px",
+        t64: "64px",
+        t72: "72px",
+        t80: "80px",
+        t84: "84px",
+        t96: "96px",
+      },
+    },
+  },
+  plugins: [],
+};
