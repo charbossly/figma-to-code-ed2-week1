@@ -1,9 +1,11 @@
-import React from "react";
 import Fungible from "../assets/images/fungible_token.png";
 
 export default function cta({ setShowModal }) {
   return (
-    <div className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12">
+    <div
+      id="cta"
+      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12"
+    >
       <div className="group bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
         <div className="relative">
           <img

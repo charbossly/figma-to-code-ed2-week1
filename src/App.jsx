@@ -6,7 +6,7 @@ import Hero from "./components/hero";
 import Collections from "./components/collections";
 import Cta from "./components/cta";
 import Features from "./components/features";
-import Modal from "./components/commons/mod";
+import Modal from "./components/commons/modal";
 import SignupForm from "./components/commons/signup";
 
 function App() {

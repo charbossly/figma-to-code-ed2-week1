@@ -1,4 +1,3 @@
-import React from "react";
 import Portfeuille from "../assets/images/portfeuille.png";
 import Bitcoin from "../assets/images/bitcoin-ellipse.png";
 import Cloud from "../assets/images/cloud-download.png";
@@ -32,7 +31,10 @@ export default function features() {
     },
   ];
   return (
-    <div className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 font-raleway">
+    <div
+      id="features"
+      className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto  border-l-2 border-grayUi50 py-12 font-raleway"
+    >
       <h1 className="text-t28 font-bold mb-8 text-left">Create and Sell Now</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -12,10 +12,10 @@ function Header({ setShowModal }) {
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "Top sales", href: "#" },
+    { name: "Top sales", href: "#collections" },
     { name: "Collections", href: "#collections" },
-    { name: "Our blog", href: "#" },
-    { name: "About us", href: "#" },
+    { name: "Our blog", href: "#cta" },
+    { name: "About us", href: "#features" },
   ];
 
   const closeMenu = () => {

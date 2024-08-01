@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const backdropVariants = {
   visible: { opacity: 1 },
@@ -16,48 +15,33 @@ const modalVariants = {
   },
 };
 
-function Modal({ selectedImg, setSelectedImg }) {
+function Modal({ showModal, setShowModal, children }) {
   const handleClick = (e) => {
     if (e.target.classList.contains("backdrop")) {
-      setSelectedImg(null);
+      setShowModal(false);
     }
   };
 
   return (
-    <motion.div
-      className="backdrop fixed top-0 left-0 w-full z-50 h-full bg-black bg-opacity-75 flex justify-center items-center"
-      variants={backdropVariants}
-      initial="hidden"
-      animate="visible"
-      onClick={handleClick}
-    >
-      <motion.img
-        src={selectedImg}
-        className="w-96 h-96 object-cover"
-        alt="Enlarged"
-        variants={modalVariants}
-      />
-      <motion.div
-        className="absolute top-50 left-50  rounded-full flex justify-center items-center"
-        variants={backdropVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.button
-          variants={modalVariants}
-          onClick={() => {
-            toast.success("Bid Placed successfully");
-            setTimeout(() => {
-              setSelectedImg(null);
-            }, 1000);
-          }}
-          className="bg-grayUi500 hover:bg-grayUi300 text-white font-bold py-2 px-4 rounded-full"
+    <AnimatePresence mode="wait">
+      {showModal && (
+        <motion.div
+          className="backdrop fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center"
+          variants={backdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          onClick={handleClick}
         >
-          Place a bid
-        </motion.button>
-      </motion.div>
-      <ToastContainer />
-    </motion.div>
+          <motion.div
+            className="bg-white rounded-lg p-8"
+            variants={modalVariants}
+          >
+            {children}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

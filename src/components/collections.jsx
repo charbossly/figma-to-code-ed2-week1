@@ -5,7 +5,7 @@ import Espace from "../assets/images/original-space.png";
 import Psx from "../assets/images/psx.png";
 import Snop from "../assets/images/snop.png";
 import { motion, AnimatePresence } from "framer-motion";
-import Modal from "./commons/modal";
+import Modal from "./commons/modalImage";
 
 const tabs = [
   { name: "All categories", filter: "all" },
@@ -46,16 +46,6 @@ function Collection() {
     selectedTab === "all"
       ? items
       : items.filter((item) => item.tag === selectedTab);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.9 },
