@@ -1,13 +1,13 @@
 import Logo from "../../assets/images/logo.png";
 
-function SignupForm({ setShowModal }) {
+function SignupForm({ changeModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    setShowModal(false);
+    changeModal(false);
   };
   const handleClose = () => {
-    setShowModal(false);
+    changeModal(false);
   };
 
   return (

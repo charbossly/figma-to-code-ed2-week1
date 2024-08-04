@@ -16,10 +16,10 @@ const modalVariants = {
   },
 };
 
-function Modal({ selectedImg, setSelectedImg }) {
+function Modal({ selectedImg, changeSelectedImg }) {
   const handleClick = (e) => {
     if (e.target.classList.contains("backdrop")) {
-      setSelectedImg(null);
+      changeSelectedImg(null);
     }
   };
 
@@ -48,7 +48,7 @@ function Modal({ selectedImg, setSelectedImg }) {
           onClick={() => {
             toast.success("Bid Placed successfully");
             setTimeout(() => {
-              setSelectedImg(null);
+              changeSelectedImg(null);
             }, 1000);
           }}
           className="bg-grayUi500 hover:bg-grayUi300 text-white font-bold py-2 px-4 rounded-full"

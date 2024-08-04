@@ -1,26 +1,7 @@
 import Logo from "../assets/images/logo.png";
+import { footerLinks } from "../data";
 
-export default function footer() {
-  const links = [
-    {
-      name: "Privacy",
-      href: "#",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      name: "Terms & Conditions",
-      href: "#",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      name: "About Us",
-      href: "#",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-  ];
+export default function Footer() {
   return (
     <footer className="max-w-screen-lg mx-10 md:mx-16 lg:mx-auto border-l-2 border-grayUi50 font-raleway">
       <div className=" py-3 border-grayUi50 border-b-2 pb-4">
@@ -31,7 +12,7 @@ export default function footer() {
           Create Explore & Collect Digital NFTs
         </h2>
         <ul className="flex mx-auto md:mx-0 gap-x-6 text-t12">
-          {links.map((link, index) => (
+          {footerLinks.map((link, index) => (
             <li key={index}>
               <a href={link.href} target={link.target} rel={link.rel}>
                 {link.name}

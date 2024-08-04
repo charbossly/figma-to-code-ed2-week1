@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 
 const backdropVariants = {
   visible: { opacity: 1 },
@@ -15,10 +14,10 @@ const modalVariants = {
   },
 };
 
-function Modal({ showModal, setShowModal, children }) {
+function Modal({ showModal, changeModal, children }) {
   const handleClick = (e) => {
     if (e.target.classList.contains("backdrop")) {
-      setShowModal(false);
+      changeModal(false);
     }
   };
 

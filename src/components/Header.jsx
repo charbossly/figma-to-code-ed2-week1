@@ -2,21 +2,14 @@ import { useState, useEffect } from "react";
 import Logo from "../assets/images/logo.png";
 import Menu from "../assets/images/menu.png";
 import Close from "../assets/images/close.png";
+import { navLinks } from "../data";
 
-function Header({ setShowModal }) {
+function Header({ changeModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Top sales", href: "#collections" },
-    { name: "Collections", href: "#collections" },
-    { name: "Our blog", href: "#cta" },
-    { name: "About us", href: "#features" },
-  ];
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -62,13 +55,13 @@ function Header({ setShowModal }) {
         <div className="hidden lg:flex  items-center space-x-3">
           <a
             href="#"
-            onClick={setShowModal}
+            onClick={() => changeModal(true)}
             className="text-grayUi700 hover:text-grayUi800  pr-4 border-r-2 border-grayUi400"
           >
             Sign up
           </a>
           <button
-            onClick={setShowModal}
+            onClick={() => changeModal(true)}
             className="px-4 py-2 bg-grayUi900 hover:bg-grayUi400 transition-all delay-75 text-white rounded-full"
           >
             Connect Wallet
@@ -102,7 +95,7 @@ function Header({ setShowModal }) {
                 <a
                   href="#"
                   onClick={() => {
-                    setShowModal(true);
+                    changeModal(true);
                     closeMenu();
                   }}
                   className="text-grayUi700 hover:text-grayUi800  pr-4 border-r-2 border-grayUi400"
@@ -110,7 +103,7 @@ function Header({ setShowModal }) {
                   Sign up
                 </a>
                 <button
-                  onClick={setShowModal}
+                  onClick={() => changeModal(true)}
                   className="px-4 py-2 bg-grayUi900 transition-all delay-75 hover:bg-grayUi400 text-white rounded-full"
                 >
                   Connect Wallet

@@ -1,27 +1,31 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Hero from "./components/hero";
-import Collections from "./components/collections";
-import Cta from "./components/cta";
-import Features from "./components/features";
-import Modal from "./components/commons/modal";
-import SignupForm from "./components/commons/signup";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Collections from "./components/Collections";
+import Cta from "./components/Cta";
+import Features from "./components/Features";
+import Modal from "./components/commons/Modal";
+import SignupForm from "./components/commons/Signup";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
 
+  const changeModal = (value) => {
+    setShowModal(value);
+  };
+
   return (
     <>
-      <Header setShowModal={setShowModal} />
-      <Hero showModal={showModal} setShowModal={setShowModal} />
+      <Header changeModal={changeModal} />
+      <Hero showModal={showModal} changeModal={changeModal} />
       <Collections />
       <Features />
-      <Cta setShowModal={setShowModal} />
+      <Cta changeModal={changeModal} />
       <Footer />
-      <Modal showModal={showModal} setShowModal={setShowModal}>
-        <SignupForm setShowModal={setShowModal} />
+      <Modal showModal={showModal} changeModal={changeModal}>
+        <SignupForm changeModal={changeModal} />
       </Modal>
     </>
   );

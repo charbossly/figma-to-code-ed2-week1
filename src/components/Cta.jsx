@@ -1,6 +1,6 @@
 import Fungible from "../assets/images/fungible_token.png";
 
-export default function cta({ setShowModal }) {
+export default function cta({ changeModal }) {
   return (
     <div
       id="cta"
@@ -22,7 +22,7 @@ export default function cta({ setShowModal }) {
               Join almost 10k NFT profiles on Digit!
             </p>
             <button
-              onClick={setShowModal}
+              onClick={changeModal}
               className="text-t14 bg-white text-grayUi800 font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300"
             >
               Sign up now
